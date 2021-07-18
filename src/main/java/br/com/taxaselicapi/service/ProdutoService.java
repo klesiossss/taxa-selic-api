@@ -23,16 +23,15 @@ public class ProdutoService {
 		
 		CondicaoPagamento condPague = request.getCondicaoPagamento();
 		Produto produto = request.getProduto();
-		Double taxaSelic = ConsultaTaxaSelic();
-		Double valor;
-		Double valorParcela;
+		Double taxaSelic = 0.0;
+		Double parcela;
+		Double aux;
 		for(int i = 1; i<= condPague.getQtdeParcelas(); i++) {
-			if(i <= 6) taxaSelic = 0.0;
+			if(i == 7) taxaSelic = ConsultaTaxaSelic();
+			aux = (produto.getValor()-condPague.getValorEntrada())/i;
 			
-			valorParcela = produto.getValor()/i;
-			
-			valor = (1 + taxaSelic)*valorParcela;
-			parcelas.add(new Parcela(i, valor, taxaSelic));
+			parcela = (1 + taxaSelic)*aux;
+			parcelas.add(new Parcela(i, parcela, taxaSelic));
 				
 			}
 		response.setParcelas(parcelas);
