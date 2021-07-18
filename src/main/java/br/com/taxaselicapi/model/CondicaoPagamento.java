@@ -1,9 +1,13 @@
 package br.com.taxaselicapi.model;
 
-
+import io.swagger.annotations.ApiModelProperty;
 
 public class CondicaoPagamento {
+	
+	@ApiModelProperty(value = "Valor da entrada")
 	private Double valorEntrada;
+	
+	@ApiModelProperty(value = "Quantidade de parcelas")
 	private Integer qtdeParcelas;
 	
 	

@@ -1,11 +1,16 @@
 package br.com.taxaselicapi.model;
 
-
+import io.swagger.annotations.ApiModelProperty;
 
 public class Parcela {
 	
+	@ApiModelProperty(value = "Numero de parcelas")
 	private Integer numeroParcela;
+	
+	@ApiModelProperty(value = "valor da parcela")
 	private Double valor;
+	
+	@ApiModelProperty(value = "taxa de juro ao mes")
 	private Double taxaJurosAoMes;
 	
 	

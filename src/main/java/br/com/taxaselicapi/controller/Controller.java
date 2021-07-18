@@ -17,6 +17,7 @@ import br.com.taxaselicapi.model.Request;
 import br.com.taxaselicapi.model.Response;
 import br.com.taxaselicapi.model.dto.SelicResponse;
 import br.com.taxaselicapi.service.ProdutoService;
+import io.swagger.annotations.ApiOperation;
 
 
 
@@ -32,13 +33,15 @@ public class Controller {
 	}
 	
 	
-	@GetMapping("/parcelas")
+	@ApiOperation(value = "Response com  a lista de parcelas")
+	@PostMapping("/parcelas")
 	ResponseEntity<Response> obterTodos(@RequestBody Request request){
 		Response response = produtoService.obterParcelas(request);
 		return 	ResponseEntity.ok(response);	
 	}
 	
 	
+	@ApiOperation(value = "Valores da taxa Selic dos ultimos 30 dias")
 	@GetMapping("/taxaSelic")
 	ResponseEntity<List<SelicResponse>> obterTaxasSelic(){
 		List<SelicResponse> taxasSelic = produtoService.ConsultaUltimasTaxasSelic();

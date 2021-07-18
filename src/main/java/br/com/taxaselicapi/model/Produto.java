@@ -1,9 +1,16 @@
 package br.com.taxaselicapi.model;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class Produto {
 	
+	@ApiModelProperty(value = "Codigo do produto")
 	private Long codigo;
+	
+	@ApiModelProperty(value = "Nome do produto")
 	private String nome;
+	
+	@ApiModelProperty(value = "Valor do produto")
 	private Double valor;
 	
 	
