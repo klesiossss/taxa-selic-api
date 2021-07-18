@@ -43,7 +43,13 @@ public class ProdutoService {
 	
 	public List<SelicResponse> ConsultaUltimasTaxasSelic(){
 		SelicApi selic = new SelicApi();
-		return selic.obterTodos();
+		List<SelicResponse> taxas = selic.obterTodos();
+		List<SelicResponse> tx = new ArrayList<>();
+		for(int i=taxas.size()-30; i<taxas.size() ; i++) {
+			tx.add(taxas.get(i));
+		}
+		return tx;
+		
 	}
 	
 	
