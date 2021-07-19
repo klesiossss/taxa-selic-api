@@ -6,7 +6,6 @@ import java.util.List;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.web.bind.annotation.RequestMethod;
 
 import springfox.documentation.builders.PathSelectors;
 import springfox.documentation.builders.RequestHandlerSelectors;
@@ -35,17 +34,22 @@ public class SwaggerConfig {
     
 	private ApiInfo apiInfo() {
 	    return new ApiInfo(
-	      "API COMPRA DE PRODUTO COM BASE EM TAXA SELIC", 
+	      "API COMPRA DE PRODUTO COM BASE NA TAXA SELIC", 
 	      "Esta API tem como objetivo retornar uma lista de parcelas dado um produto e uma condicao de pagamento. ", 
 	      "API", 
 	      "Terms of service", 
 	      new Contact("Klesio Silva", "https://github.com/klesiossss", "klesiossss@gmail.com"), 
-	      "https://www.linkedin.com/in/klesio-silva-e-silva-87987717b/", "https://github.com/klesiossss", Collections.emptyList());
+	      "Linkedin", "https://www.linkedin.com/in/klesio-silva-e-silva-87987717b/", Collections.emptyList());
 	}
     
     private List<ResponseMessage> responseMessageForGET()
     {
-        return new ArrayList<ResponseMessage>() {{
+        return new ArrayList<ResponseMessage>() {/**
+			 * 
+			 */
+			private static final long serialVersionUID = 1L;
+
+		{
             add(new ResponseMessageBuilder()
                 .code(500)
                 .message("500 message")

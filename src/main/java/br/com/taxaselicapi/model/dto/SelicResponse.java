@@ -4,11 +4,14 @@ import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.Locale;
 
+import io.swagger.annotations.ApiModelProperty;
+
 public class SelicResponse {
 	
-
-	
+	@ApiModelProperty(value = "data da cotacao da taxa selic")
 	private String data;
+	
+	@ApiModelProperty(value = "taxa de juro selic")
 	private Double valor;
 	
 	

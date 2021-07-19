@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiOperation;
 
 
 @RestController
-@RequestMapping("/compraProduto")
+@RequestMapping("/compra")
 public class Controller {
 	
 	public ProdutoService produtoService;
