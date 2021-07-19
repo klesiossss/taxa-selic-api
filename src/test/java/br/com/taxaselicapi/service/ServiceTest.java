@@ -63,7 +63,6 @@ public class ServiceTest {
 	@Test
 	@DisplayName("Deve acionar um response de parcelas com base na taxa selic dado um request ")
 	public  void TesteRetornandoParcelas() {
-		//when(produtoService.obterParcelas(request)).thenReturn(response);
 		
 		request.setProduto(produto);
 		request.setCondicaoPagamento(condicaoPagamento);
@@ -97,7 +96,6 @@ public class ServiceTest {
 	@Test
 	@DisplayName("Deve consultar as taxas de juros dos ultimos 30 dias")
 	void testConsultaTaxaSelic() {
-	//	when(produtoService.ConsultaUltimasTaxasSelic()).thenReturn(selicResp);	
 		
 		List<SelicResponse> consulta = produtoService.ConsultaUltimasTaxasSelic();
 		selicResp = produtoService.ConsultaUltimasTaxasSelic();
