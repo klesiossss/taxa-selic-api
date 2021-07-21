@@ -2,7 +2,6 @@
 Consiste em simular a compra de produtos como base na taxa de juros selic 
 
 
-#Para utilizar a API Adicione Usuario e Senha
+# Apos subir a aplicacao acesse: 
 
-Usuario: admin
-Senha: admin
+http://localhost:8080
